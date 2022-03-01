@@ -45,7 +45,7 @@ const userSchema = new mongoose.Schema({
     },
     phoneNumber:{
         type:Number,
-        default:'0123456789'
+        default:'012346549'
     },
     gioiTinh:{
         type:String,
@@ -53,7 +53,7 @@ const userSchema = new mongoose.Schema({
     },
     CMND:{
         type:Number,
-        default:'0123456789'
+        default:'0122256789'
         
     },
     Address:{

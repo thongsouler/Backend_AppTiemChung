@@ -12,7 +12,6 @@ const thongbaoTiem = require('./routes/thongBaoTiem')
 const chungnhanTiem = require('./routes/chungnhanTiem')
 const report = require('./routes/report')
 const testdangky = require('./routes/testRoute')
-
 const errorMiddleware = require('./middleware/error')
 const cookieParser = require("cookie-parser")
 const fileupload = require("express-fileupload");
@@ -22,12 +21,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(fileupload());
+
 // connect to database
 mongoose.connect(process.env.MONGO_URL)
         .then(()=> console.log("DB Connection successfully"))
         .catch((err) => {
             console.log(err)
             })
+            
 // Setting up cloudinary configuration
 cloudinary.config({ 
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
@@ -46,6 +47,7 @@ app.use('/api/v1',thongbaoTiem)
 app.use('/api/v1',chungnhanTiem)
 app.use('/api/v1',report)
 app.use('/api/v1',testdangky)
+
 
 
 // middleware to handle errors

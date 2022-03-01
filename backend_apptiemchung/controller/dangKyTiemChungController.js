@@ -20,6 +20,7 @@ exports.newdktc = catchAsyncErrors(async (req, res) => {
 
 })
 
+
 // lấy id của hồ sơ đăng ký
 exports.hoSoTiemdetails = catchAsyncErrors(async (req, res) => {
     const danhsach = dangKyTiemChung.findById(req.params.id)
@@ -29,7 +30,6 @@ exports.hoSoTiemdetails = catchAsyncErrors(async (req, res) => {
         .exec((err, hoso) => {
             if (err) return (err);
             console.log(hoso);
-
             res.status(200).json({
                 success: true,
                 hoso
@@ -109,7 +109,6 @@ exports.DanhSachTiem = async (req, res) => {
 
             })
         })
-
 
 }
 
